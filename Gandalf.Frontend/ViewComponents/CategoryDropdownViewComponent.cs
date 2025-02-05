@@ -4,19 +4,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Gandalf.Frontend.ViewComponents;
 
-public class ProductDropdownViewComponent : ViewComponent
+public class CategoryDropdownViewComponent : ViewComponent
 {
-    private readonly ProductService service;
+    private readonly CategoryServiceFront service;
 
-    public ProductDropdownViewComponent(ProductService service)
+    public CategoryDropdownViewComponent(CategoryServiceFront service)
     {
         this.service = service;
     }
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        var products = await service.GetProducts();
+        var categories = await service.GetCategories();
 
-        return View(products);
+        return View(categories);
     }
 }

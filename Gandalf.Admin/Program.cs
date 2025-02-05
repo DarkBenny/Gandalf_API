@@ -1,4 +1,4 @@
-using Gandalf.Admin.Services;
+using Gandalf.Frontend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

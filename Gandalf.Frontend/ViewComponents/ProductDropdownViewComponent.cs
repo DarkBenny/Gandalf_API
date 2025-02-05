@@ -6,9 +6,9 @@ namespace Gandalf.Frontend.ViewComponents;
 
 public class ProductDropdownViewComponent : ViewComponent
 {
-    private readonly ProductService service;
+    private readonly ProductServiceFront service;
 
-    public ProductDropdownViewComponent(ProductService service)
+    public ProductDropdownViewComponent(ProductServiceFront service)
     {
         this.service = service;
     }

@@ -1,9 +1,23 @@
+using Gandalf.Frontend.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<CategoryServiceFront>();
+builder.Services.AddHttpClient<CategoryServiceFront>(options =>
+{
+    options.BaseAddress = new Uri("http://localhost:5211");
+});
+
+builder.Services.AddScoped<ProductServiceFront>();
+builder.Services.AddHttpClient<ProductServiceFront>(options =>
+{
+    options.BaseAddress = new Uri("http://localhost:5211");
+});
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

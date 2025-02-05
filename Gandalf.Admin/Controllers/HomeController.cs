@@ -1,9 +1,9 @@
 using System.Diagnostics;
-using Gandalf.Admin.Models;
-using Gandalf.Admin.Services;
+using Gandalf.Frontend.Models;
+using Gandalf.Frontend.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gandalf.Admin.Controllers
+namespace Gandalf.Frontend.Controllers
 {
     public class HomeController : Controller
     {

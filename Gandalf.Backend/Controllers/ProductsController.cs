@@ -27,7 +27,8 @@ namespace Gandalf.Backend.Controllers
         {
             return await _context.Product.ToListAsync();
         }
-
+        
+        
         // GET: api/Products/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)

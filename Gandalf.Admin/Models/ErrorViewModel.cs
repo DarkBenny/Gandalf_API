@@ -1,4 +1,4 @@
-namespace Gandalf.Admin.Models
+namespace Gandalf.Frontend.Models
 {
     public class ErrorViewModel
     {

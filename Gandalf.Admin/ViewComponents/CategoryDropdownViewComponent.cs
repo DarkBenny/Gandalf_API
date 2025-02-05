@@ -1,8 +1,8 @@
-﻿using Gandalf.Admin.Services;
+﻿using Gandalf.Frontend.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Gandalf.Admin.ViewComponents;
+namespace Gandalf.Frontend.ViewComponents;
 
 public class CategoryDropdownViewComponent : ViewComponent
 {
