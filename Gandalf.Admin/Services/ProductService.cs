@@ -13,9 +13,9 @@ namespace Gandalf.Admin.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<Product>?> GetProducts()
+        public async Task<List<Product>?> GetProducts()
         {
-            return await httpClient.GetFromJsonAsync<IEnumerable<Product>>("/api/products");
+            return await httpClient.GetFromJsonAsync<List<Product>>("/api/products");
         }
 
         public async Task<Product?> GetProduct(int id)

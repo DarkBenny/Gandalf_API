@@ -31,6 +31,7 @@ namespace Gandalf.Backend.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageLink = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

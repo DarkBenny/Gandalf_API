@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gandalf.Backend.Migrations
 {
     [DbContext(typeof(GandalfBackendContext))]
-    [Migration("20250207114650_ProductsUpdate")]
-    partial class ProductsUpdate
+    [Migration("20250207181559_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,8 +1,9 @@
 ﻿using Gandalf.Admin.Models;
-using Gandalf.Admin.ViewModels;
 using Gandalf.Admin.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Gandalf.Admin.Controllers
 {
@@ -41,6 +42,7 @@ namespace Gandalf.Admin.Controllers
         // GET: ProductsController/Create
         public ActionResult Create()
         {
+
             ViewBag.CategoriesList = categoryService.GetCategories();
 
             return View();
@@ -51,7 +53,6 @@ namespace Gandalf.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Product product)
         {
-         
             if (ModelState.IsValid)
             {
                 await productService.CreateProduct(product);
