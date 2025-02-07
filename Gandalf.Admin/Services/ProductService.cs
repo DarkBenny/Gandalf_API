@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Gandalf.Frontend.Models;
+using Gandalf.Admin.Models;
 
-namespace Gandalf.Frontend.Services
+namespace Gandalf.Admin.Services
 {
     public class ProductService
     {
@@ -25,7 +25,7 @@ namespace Gandalf.Frontend.Services
 
         public async Task CreateProduct(Product product)
         {
-            var response = await httpClient.PostAsJsonAsync("/api/products", new Product { Name = product.Name, CategoryId = product.CategoryId, ImageLink = product.ImageLink });
+            var response = await httpClient.PostAsJsonAsync("/api/products", new Product { Name = product.Name, CategoryId = product.CategoryId, ImageLink = product.ImageLink, CategoryName = product.CategoryName});
             response?.EnsureSuccessStatusCode();
         }
 

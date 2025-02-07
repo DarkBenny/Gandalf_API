@@ -23,10 +23,10 @@ namespace Gandalf.Frontend.Services
             return await httpClient.GetFromJsonAsync<Product?>($"/api/products/{id}");
         }
 
-        //public async Task<IEnumerable<Product>?> GetProductsByCategory(int id)
-        //{
-        //    return await httpClient.GetFromJsonAsync<IEnumerable<Product>>("/api/products");
-        //}
+        public async Task<IEnumerable<Product>?> GetProductsByCategory(int id)
+        {
+            return await httpClient.GetFromJsonAsync<IEnumerable<Product>>($"/api/products/category/{id}");
+        }
 
 
     }

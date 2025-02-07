@@ -29,7 +29,15 @@ namespace Gandalf.Backend.Controllers
         }
         
         
-        // GET: api/Products/5
+        // GET: api/Products
+        [HttpGet("category/{id}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(int id)
+        {
+            return await _context.Product.Where(Product => Product.CategoryId == id).ToListAsync();
+        }
+        
+        
+        // GET: api/Products/Category/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {

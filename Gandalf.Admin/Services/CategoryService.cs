@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using Gandalf.Frontend.Models;
+using Gandalf.Admin.Models;
 
-namespace Gandalf.Frontend.Services;
+namespace Gandalf.Admin.Services;
 
 public class CategoryService
 {

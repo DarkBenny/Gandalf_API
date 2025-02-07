@@ -37,9 +37,9 @@ namespace Gandalf.Frontend.Controllers
 
         public async Task<ActionResult> ProductsByCategory(int id)
         {
-            var products = await service.GetProducts();
+            var products = await service.GetProductsByCategory(id);
 
-            return View(products);
+            return View("Category", products);
         }
 
     }

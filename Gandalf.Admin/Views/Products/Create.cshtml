@@ -1,4 +1,4 @@
-﻿@model Gandalf.Frontend.Models.Product
+﻿@model Gandalf.Admin.Models.Product
 
 @{
     ViewData["Title"] = "Create";
@@ -24,7 +24,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
+                <select asp-for="CategoryId" class="control-label">
+                    @foreach (var category in ViewBag.CategoriesList)
+                    {
+                        <option value="@category.Id">@category.Name</option>                       
+                    }
+                </select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
