@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Gandalf.Frontend.Models.Product>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Products";
 }
 <!doctype html>
 <html lang="en">
@@ -14,35 +14,44 @@
 <body>
 
 
-    <h1>@Html.DisplayNameFor(model => model.CategoryName) </h1>
+    <h1>
+        @foreach (var i in Model)
+        {
+            @i.CategoryName
+            break;
+        }
+    </h1>
 
-    <!--
-
-    name, imagelink, categoryname
-
-    for each: <a asp-action="Details" asp-route-id="item.Id">Details</a>
-
-    -->
+    <!--  xs-8 sm-6 md-4 lg-4  --->
 
 
+    <div class="container">
+        <div class="row">
 
-    @foreach (var item in Model)
-    {
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="@item.ImageLink" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <p class="card-text">@item.CategoryName</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            @foreach (var item in Model)
+            {
+                
+                    <div class="card mb-3 mx-2 col-md-3 col-sm-4" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="@item.ImageLink" class="img-fluid rounded-start" alt="Image not found">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Name</h5>
+                                    <p class="card-text">@item.CategoryName</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                
+            }
         </div>
-    }
+
+    </div>
+
+
 </body>
 </html>
 
