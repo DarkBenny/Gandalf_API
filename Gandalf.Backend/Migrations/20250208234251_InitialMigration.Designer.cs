@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gandalf.Backend.Migrations
 {
     [DbContext(typeof(GandalfBackendContext))]
-    [Migration("20250207181559_InitialMigration")]
+    [Migration("20250208234251_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />

@@ -39,7 +39,7 @@ namespace Gandalf.Frontend.Controllers
         {
             var products = await service.GetProductsByCategory(id);
 
-            return View("Category2", products);
+            return View("Category", products);
         }
 
     }

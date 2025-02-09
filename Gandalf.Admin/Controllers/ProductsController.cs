@@ -40,10 +40,9 @@ namespace Gandalf.Admin.Controllers
         }
 
         // GET: ProductsController/Create
-        public ActionResult Create()
+        public async Task<ActionResult >Create()
         {
-
-            ViewBag.CategoriesList = categoryService.GetCategories();
+            ViewBag.CategoriesList = await categoryService.GetCategories();
 
             return View();
         }
@@ -55,6 +54,8 @@ namespace Gandalf.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                var category = await categoryService.GetCategory(product.CategoryId);
+                product.CategoryName = category.Name;
                 await productService.CreateProduct(product);
                 return RedirectToAction(nameof(Index));
             }
