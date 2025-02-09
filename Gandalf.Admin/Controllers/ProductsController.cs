@@ -67,7 +67,12 @@ namespace Gandalf.Admin.Controllers
         {
             var product = await productService.GetProduct(id);
 
+            ViewBag.CategoriesList = await categoryService.GetCategories();
+            
+            
+
             if (product == null)
+
             {
                 return RedirectToAction(nameof(Index));
             }
@@ -81,6 +86,8 @@ namespace Gandalf.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                var category = await categoryService.GetCategory(product.CategoryId);
+                product.CategoryName = category.Name;
                 await productService.UpdateProduct(id, product);
                 return RedirectToAction(nameof(Index));
             }

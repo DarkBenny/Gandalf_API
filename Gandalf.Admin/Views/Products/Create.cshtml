@@ -18,8 +18,9 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <p></p>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
+                <label asp-for="CategoryId" class="control-label">Category</label>
                 <div></div>
                 <select id="catSelect" asp-for="CategoryId" class="control-label" onselect="SetCategoryName();">
                     <option value="" disabled selected>Select your option</option>
@@ -30,8 +31,9 @@
                 </select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
+            <p></p>
             <div class="form-group">
-                <label asp-for="ImageLink" class="control-label"></label>
+                <label asp-for="ImageLink" class="control-label">Image url</label>
                 <input asp-for="ImageLink" class="form-control" />
                 <span asp-validation-for="ImageLink" class="text-danger"></span>
             </div>
@@ -39,8 +41,7 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            <input id="catName" asp-for="CategoryName" class="form-control" type="hidden" />
-            <span asp-validation-for="CategoryName" class="text-danger"></span>
+            <p></p>
         </form>
     </div>
 </div>
